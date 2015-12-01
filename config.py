@@ -1,0 +1,3 @@
+SQLALCHEMY_DATABASE_URI = 'oracle://user:pass@oracle_host/oracle_sid'
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+SQLALCHEMY_POOL_SIZE = 5
