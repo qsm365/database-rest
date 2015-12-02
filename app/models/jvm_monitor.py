@@ -1,8 +1,6 @@
 from sqlalchemy.sql import text
 from flask_sqlalchemy import SQLAlchemy
-from .. import app
-
-db = SQLAlchemy(app)
+from app import db
 
 def get(uid):
     if uid:
