@@ -14,7 +14,7 @@ def get(uid):
 def save(uid,val):
     if uid:
         cmd1=text("delete from db_jvm_baseinfo where id=:id")
-        cmd2=text("insert into db_jvm_baseinfo values (:id,:os_name,:os_version,:os_arch,:total_phy_cpu,:total_phy_mem,:init_heap_mem,:max_heap_mem,:vm_name,:vm_version,:max_file_descriptor)")
+        cmd2=text("insert into db_jvm_baseinfo values (:id,:os_name,:os_version,:os_arch,:total_phy_cpu,:total_phy_mem,:init_heap_mem,:max_heap_mem,:vm_name,:vm_version,:max_file_descriptor,:init_eden_mem,:init_old_mem,:init_perm_mem,:init_surv_mem,:max_eden_mem,:max_old_mem,:max_perm_mem,:max_surv_mem)")
         try:
             db.engine.execute(cmd1,id=uid)
             db.engine.execute(cmd2,val)

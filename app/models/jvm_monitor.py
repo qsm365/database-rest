@@ -13,7 +13,7 @@ def get(uid):
 
 def save(uid,val):
     if uid:
-        cmd=text("insert into db_jvm_monitor values (:id,TO_DATE ('01/01/1970','MM/DD/YYYY')+:monitor_time/(1000*60*60*24)+8/24,:used_heap_mem,:used_nonheap_mem,:thread_count,:cpu_load,:class_count,:open_file_descriptor)")
+        cmd=text("insert into db_jvm_monitor values (:id,TO_DATE ('01/01/1970','MM/DD/YYYY')+:monitor_time/(1000*60*60*24)+8/24,:used_heap_mem,:used_nonheap_mem,:thread_count,:cpu_load,:class_count,:open_file_descriptor,:used_eden_mem,:used_old_mem,:used_perm_mem,:used_surv_mem)")
         try:
             db.engine.execute(cmd,val)
         except Exception,e:
